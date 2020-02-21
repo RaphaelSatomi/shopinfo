@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shopinfo | PC Gamer Barato</title>
+        <link type="text/css" href="assets/css/style.css" rel="stylesheet"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no"/>        
+        <link rel="preload" href="https://fonts.gstatic.com/s/encodesans/v4/LDI2apOFNxEwR-Bd1O9uYPOleef2kg.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous" xmlns="http://www.w3.org/1999/xhtml">        
+        <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>    
+        <script>
+            $(document).ready(function(){
+                $("#search").focus(function(){
+                    $(this).css("box-shadow", "0px 0px 3px #dd1f26");
+                    $(this).css('border', '2px solid #dd1f26');
+                });
+                $("#search").blur(function(){
+                    $(this).css( "box-shadow", "0px 0px 0px #dd1f26");
+                    $(this).css("border", " 2px solid #3d3d3d");
+                });               
+
+
+
+                $(".pc").mouseover(function(){                    
+                    $(".prod").css("padding-top", "22px");
+                    $(".pc").css("border-bottom", "2px solid #dd1f26");
+                    $(".prod_item").css("display", "block");
+                    $(".banner").css("margin-top", "-360px");
+                    $(".seta").css("display", "none");
+                    $(".change").css("margin-top", "120px");
+                });
+                $(".pc").mouseout(function(){
+                    $(".prod").css("padding-top", "20px");
+                    $(".pc").css("border-bottom", "0px");
+                    $(".prod_item").css("display", "none");
+                    $(".banner").css("margin-top", "-160px");
+                    $(".seta").css("display", "flex");
+                    $(".change").css("margin-top", "320px");
+                });
+
+                $(".acessorios").mouseover(function(){                    
+                    $(".prod").css("padding-top", "22px");
+                    $(".acessorios").css("border-bottom", "2px solid #dd1f26");
+                    $(".prod_item").css("display", "block");
+                    $(".banner").css("margin-top", "-360px");
+                    $(".seta").css("display", "none");
+                    $(".change").css("margin-top", "120px");
+                });
+                $(".acessorios").mouseout(function(){
+                    $(".prod").css("padding-top", "20px");
+                    $(".acessorios").css("border-bottom", "0px");
+                    $(".prod_item").css("display", "none");
+                    $(".banner").css("margin-top", "-160px");
+                    $(".seta").css("display", "flex");
+                    $(".change").css("margin-top", "320px");
+                });
+
+                $(".hardware").mouseover(function(){                    
+                    $(".prod").css("padding-top", "22px");
+                    $(".hardware").css("border-bottom", "2px solid #dd1f26");
+                    $(".prod_item").css("display", "block");
+                    $(".banner").css("margin-top", "-360px");
+                    $(".seta").css("display", "none");
+                    $(".change").css("margin-top", "120px");
+                });
+                $(".hardware").mouseout(function(){
+                    $(".prod").css("padding-top", "20px");
+                    $(".hardware").css("border-bottom", "0px");
+                    $(".prod_item").css("display", "none");
+                    $(".banner").css("margin-top", "-160px");
+                    $(".seta").css("display", "flex");
+                    $(".change").css("margin-top", "320px");
+                });
+
+                $(".perif").mouseover(function(){                    
+                    $(".prod").css("padding-top", "22px");
+                    $(".perif").css("border-bottom", "2px solid #dd1f26");
+                    $(".prod_item").css("display", "block");
+                    $(".banner").css("margin-top", "-360px");
+                    $(".seta").css("display", "none");
+                    $(".change").css("margin-top", "120px");
+                });
+                $(".perif").mouseout(function(){
+                    $(".prod").css("padding-top", "20px");
+                    $(".perif").css("border-bottom", "0px");
+                    $(".prod_item").css("display", "none");
+                    $(".banner").css("margin-top", "-160px");
+                    $(".seta").css("display", "flex");
+                    $(".change").css("margin-top", "320px");
+                });
+
+                $(".escritorio").mouseover(function(){                    
+                    $(".prod").css("padding-top", "22px");
+                    $(".escritorio").css("border-bottom", "2px solid #dd1f26");
+                    $(".prod_item").css("display", "block");
+                    $(".banner").css("margin-top", "-360px");
+                    $(".seta").css("display", "none");
+                    $(".change").css("margin-top", "120px");
+                });
+                $(".escritorio").mouseout(function(){
+                    $(".prod").css("padding-top", "20px");
+                    $(".escritorio").css("border-bottom", "0px");
+                    $(".prod_item").css("display", "none");
+                    $(".banner").css("margin-top", "-160px");
+                    $(".seta").css("display", "flex");
+                    $(".change").css("margin-top", "320px");
+                });
+
+                $(".shop").mouseover(function(){                    
+                    $(".prod").css("padding-top", "22px");
+                    $(".shop").css("border-bottom", "2px solid #dd1f26");
+                    $(".prod_item").css("display", "block");
+                    $(".banner").css("margin-top", "-360px");
+                    $(".seta").css("display", "none");
+                    $(".change").css("margin-top", "120px");
+                });
+                $(".shop").mouseout(function(){
+                    $(".prod").css("padding-top", "20px");
+                    $(".shop").css("border-bottom", "0px");
+                    $(".prod_item").css("display", "none");
+                    $(".banner").css("margin-top", "-160px");
+                    $(".seta").css("display", "flex");
+                    $(".change").css("margin-top", "320px");
+                });            
+
+                var slideIndex = 0;
+                var x = 0;
+                showSlides(x);
+                function showSlides(x) {                                                                    
+                    var i;
+                    var slides = document.getElementsByClassName("banner");
+                    var button = document.getElementsByClassName("change_button");
+
+                    console.log(x);
+
+                    for(i = 0; i < slides.length; i++) {                        
+                        slides[i].style.display = "none";  
+                    }                    
+                    slideIndex++;
+
+                    if(slideIndex > slides.length) {
+                        slideIndex = 1;
+                    }      
+                    
+                    for(i = 0; i < slides.length; i++){
+                        button[i].className = button[i].className.replace("button_on", "");
+                    }
+                    
+                    slides[slideIndex-1].style.display = "block"; 
+                    button[slideIndex-1].className += " button_on";                    
+                    setTimeout(showSlides, 3000);                                         
+                }                
+            });
+            </script>            
+    </head>
+    <body>
+        <div class="promo">
+            <div class="promo_int">
+                <img src="assets/images/print_cupom.png"/>
+                <div class="text_promo">
+                    <div class="text_promo_top">
+                        GANHE <b class="val_promo">R$ 75,00 DE DESCONTO </b> EM PCs GAMER UTILIZANDO O CUPOM: <b>PRIMEIRACOMPRA</b>
+                    </div>
+                    <div class="text_promo_bot">
+                        *Válido apenas para primeira compra acima de R$1900,00 limitados a uma compra por CPF
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <header>
+            <div class="header_int">
+                <img src="assets/images/logo_shopinfo.png"/>
+                <nav>
+                    <div class="nav_prod">
+                        <div class="nav_prod_int">
+                            <div class="prod pc"><a href="">PC Gamer</a></div>
+                            <div class="prod acessorios"><a href="">Acessórios</a></div>
+                            <div class="prod hardware"><a href="">Hardware</a></div>
+                            <div class="prod perif"><a href="">Periféricos</a></div>
+                            <div class="prod escritorio"><a href="">Escritório</a></div>
+                            <div class="prod shop"><a href="">ShopOfertas</a></div>
+                        </div>
+                        <div class="nav_prod_item">
+                            
+                        </div>
+                    </div>
+                    <div class="nav_link_right">
+                        <div class="nav_search">
+                            <input id="search" type="text" placeholder="O que você procura..." name="texto"/>
+                            <img src="assets/images/lupa.png"/>
+                        </div>
+                        <div class="nav_contato">
+                            <img src="assets/images/contato.png"/>
+                        </div>
+                        <div class="nav_carrinho">
+                            <img src="assets/images/carrinho.png"/>                    
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="prod_item">
+        </div>
+        
+        <div class="banner">
+            <img src="assets/images/image1.jpg" style="width: 100%">
+        </div>
+          
+        <div class="banner">            
+            <img src="assets/images/image2.png" style="width: 100%">
+        </div>
+        
+        <div class="banner">
+            <img src="assets/images/image3.jpg" style="width: 100%"> 
+        </div>
+
+        <div class="banner">            
+            <img src="assets/images/image4.jpg" style="width: 100%">
+        </div>          
+
+        <div class="banner">
+            <img src="assets/images/image5.jpg" style="width: 100%">
+        </div>
+
+        <div class="banner">            
+            <img src="assets/images/image6.jpg" style="width: 100%">
+        </div>          
+
+        <div class="change">
+            <div class="change_int">
+                <a href=""><div class="change_button first"></div></a>
+                <a href=""><div class="change_button second"></div></a>
+                <a href=""><div class="change_button third"></div></a>
+                <a href=""><div class="change_button fourth"></div></a>
+                <a href=""><div class="change_button fifth"></div></a>
+                <a href=""><div class="change_button sixth"></div></a>
+            </div>
+        </div>
+
+        <div class="seta">
+            <div class="seta_int">
+                <div class="seta_left">
+                    <a href="">
+                        <img src="assets/images/seta_left.png" onclick="showSlides(1)"/>
+                    </a>
+                </div>
+                <div class="seta_right">
+                    <a href=""><img src="assets/images/seta_right.png"/></a>
+                </div>                
+            </div>
+        </div>
+
+        <div style="height: 1000px"></div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
