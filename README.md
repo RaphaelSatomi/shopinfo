@@ -1,6 +1,5 @@
 # Shopinfo Copy
 
-[Link shopinfo copy](https://shopinfo-copy.000webhostapp.com/)
 
 - Training HTML, CSS and testing Jquery and bootstrap - Shopinfo Copy
 - This website is responsive up to 768px
