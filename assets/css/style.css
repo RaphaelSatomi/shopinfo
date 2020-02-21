@@ -382,14 +382,7 @@ nav{
 
 }
 
-@media only screen and (max-width: 769px){    
-    .banner{
-        height: 300px;
-    }
-    .banner img{
-        height: 300px;
-    }
-
+@media only screen and (max-width: 769px){        
     .promo_int{
         width: 564px;
     }
@@ -464,16 +457,7 @@ nav{
         width: 18px;
         height: 18px;    
     }
-
-
-    .change{
-        margin-top: 200px;
-    }
-    .seta{
-        margin-top: -290px;
-        height: 200px;
-    }
-
+    
 }
 
 
