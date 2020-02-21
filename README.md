@@ -13,7 +13,11 @@
 - <h2>Width: 1024px</h2>
  <img src="assets/images/site_1024.png" width="540" height="300"> <br/>
 - <h2>Width: 768px</h2>
- <img src="assets/images/site_768.png" width="400" height="298">
+ <img src="assets/images/site_768.png" width="400" height="298"> <br/>
+- <h2>Width: 452px</h2>
+ <img src="assets/images/site_425.png" width="380" height="513">
+- <h2>Menu</h2>
+ <img src="assets/images/site_425_menu.png" width="380" height="513"> <br/>
 
 
 ---
