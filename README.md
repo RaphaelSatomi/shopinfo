@@ -17,7 +17,7 @@
  
 - <h2>Width: 425px</h2>
 <div style="display: flex; justify-content: center">
- <img style="margin-right: 10px;"src="assets/images/site_425.png" width="380" height="513">
+ <img style="margin-right: 50px;"src="assets/images/site_425.png" width="380" height="513">
  <img src="assets/images/site_425_menu.png" width="380" height="513">
 </div>
 
