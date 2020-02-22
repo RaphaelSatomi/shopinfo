@@ -27,11 +27,12 @@
                         "width": "100%",                        
                     }, 500);
                     $(".teste").fadeIn(800);
-                });
-                                
-                $('.close').click(function () {                                        
-                    $('.teste').css("display", "none");                              
-                });
+                    $('.close').click(function () {                                        
+                        $('#menu_open_mobile').width(0);         
+                        $("#menu_open_mobile").css("height", "0");                        
+                        $('.teste').css("display", "none");
+                    });
+                });                                                
                 
 
                 function open_input(){
@@ -168,7 +169,7 @@
                     
                     slides[slideIndex-1].style.display = "block"; 
                     button[slideIndex-1].className += " button_on";                    
-                    setTimeout(showSlides, 30000);                                         
+                    setTimeout(showSlides, 15000);                                         
                 }                
             });
             </script>            
