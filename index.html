@@ -21,24 +21,24 @@
                 
                                               
                 $('#menu_open_mobile').width(0);                                 
-                $('.teste').css("display", "none");                              
-                $('.icon_mobile').click(function () {
-                    $("#menu_open_mobile").css("height", "100%");
-                    $(".teste").css("width", "100%");
+                $('.linha_menu').css("display", "none");                              
+                $('.icon_mobile').click(function () {                         
+                    $("#menu_open_mobile").css("height", "96%");
+                    $(".linha_menu").css("width", "100%");
                     $('#menu_open_mobile').show().animate({
-                        "width": "100%",                        
+                        "width": "96%",                        
                     }, 500);
-                    $(".teste").fadeIn(800);
+                    $(".linha_menu").fadeIn(800);
                 });                                                
-                $('.close').click(function () {                                                                                                                                          
+                $('.close').click(function () {                      
                     $('#menu_open_mobile').show().animate({
                         "width": "0%",                        
-                    }, 350);
-                    $(".teste").fadeTo(800);
-                    setTimeout(function(){
-                        $('.teste').css("display", "none");                              
-                        $('#menu_open_mobile').height(0);                 
-                    }, 320);                    
+                    }, 500);
+                    $(".linha_menu").fadeOut(400);   
+                    setTimeout(function(){                         
+                        $("#menu_open_mobile").css("height", "0%");
+                        $(".linha_menu").css("width", "0%");
+                    }, 501);                                                                                                                                                                               
                 });                                                
 
 
@@ -221,14 +221,18 @@
                     $(".button_up").css("display", "flex");
                     $(".links_show").animate({
                         height: "608px",
-                    });                                      
+                    });            
+                    $(".links_hide a").css("display", "block");                          
                 });                
                 $(".button_up").click(function(){                
                     $(this).css("display", "none");
                     $(".button_down").css("display", "flex");
                     $(".links_show").animate({
                         height: "30px",
-                    });                                      
+                    });                
+                    setTimeout(function(){
+                        $('.links_hide a').css("display", "none");                                                                   
+                    }, 320);                                                     
                 });
                 $(".button_down2").click(function(){                
                     $(this).css("display", "none");
@@ -236,55 +240,71 @@
                     $(".links_show2").animate({
                         height: "476px",
                     });                                      
+                    $(".links_hide2 a").css("display", "block");                          
                 });                
                 $(".button_up2").click(function(){                
                     $(this).css("display", "none");
                     $(".button_down2").css("display", "flex");
                     $(".links_show2").animate({
                         height: "30px",
-                    });                                      
+                    });            
+                    setTimeout(function(){
+                        $('.links_hide2 a').css("display", "none");                                                                   
+                    }, 320);                 
                 });                
                 $(".button_down3").click(function(){                
                     $(this).css("display", "none");
                     $(".button_up3").css("display", "flex");
                     $(".links_show3").animate({
                         height: "520px",
-                    });                                      
+                    });           
+                    $(".links_hide3 a").css("display", "block");                                                     
                 });                
                 $(".button_up3").click(function(){                
                     $(this).css("display", "none");
                     $(".button_down3").css("display", "flex");
                     $(".links_show3").animate({
                         height: "30px",
-                    });                                      
+                    });            
+                    setTimeout(function(){
+                        $('.links_hide3 a').css("display", "none");                                                                   
+                    }, 320);                 
                 });                
                 $(".button_down4").click(function(){                
                     $(this).css("display", "none");
                     $(".button_up4").css("display", "flex");
                     $(".links_show4").animate({
                         height: "256px",
-                    });                                      
+                    });           
+                    $(".links_hide4 a").css("display", "block");                                                     
                 });                
                 $(".button_up4").click(function(){                
                     $(this).css("display", "none");
                     $(".button_down4").css("display", "flex");
                     $(".links_show4").animate({
                         height: "30px",
-                    });                                      
+                    });            
+                    setTimeout(function(){
+                        $('.links_hide4 a').css("display", "none");                                                                   
+                    }, 320);                                                                     
                 });                
                 $(".button_down5").click(function(){                
                     $(this).css("display", "none");
                     $(".button_up5").css("display", "flex");
                     $(".links_show5").animate({
                         height: "212px",
-                    });                                      
+                    });           
+                    $(".links_hide5 a").css("display", "block");                                                     
                 });                
                 $(".button_up5").click(function(){                
                     $(this).css("display", "none");
                     $(".button_down5").css("display", "flex");
                     $(".links_show5").animate({
                         height: "30px",
-                    });                                      
+                    });            
+                    setTimeout(function(){
+                        $('.links_hide5 a').css("display", "none");                                                                   
+                    }, 320);                 
                 });                                
             });
             </script>            
@@ -367,7 +387,7 @@
                 </div>
             </div>
         </header>                
-        <div class="container-fluid" id="menu_open_mobile" style="display: none">            
+        <div class="container-fluid" id="menu_open_mobile" style="display: none; padding-left: 10px;padding-right: 1%; width: 96%">            
             <div class="row teste" style="margin-top: -10px;">
                 <div class="col-11 linha_menu" style="padding-bottom: 10px; padding-top: 10px">                    
                     <div class="row" id="menu_open_first">
@@ -548,8 +568,8 @@
             </div>  
         </div>
 
-        <div class="escolha_pc">                            
-            <div class="escolha_pc_int">                
+        <div class="escolha_pc">                                        
+            <form method="POST" class="escolha_pc_int" style="margin: 0">
                 <select class="placa_video_opt"name="opcoes">
                     <option value="">PLACA DE VÍDEO</option>
                     <option value="">GeForce GT 1030 2GB</option>
@@ -571,55 +591,55 @@
                     <option value="">Amd Radeon RX 580 8GB</option>
                 </select>                                               
                 <select class="processador_opt"name="opcoes">
-                    <option value="1">PROCESSADOR</option>
-                    <option value="1">i3-8100</option>
-                    <option value="1">i3-9100F</option>
-                    <option value="1">i5-7400</option>
-                    <option value="1">i5-8400</option>
-                    <option value="1">i5-9400F</option>
-                    <option value="1">i7-7700</option>
-                    <option value="1">i7-7700K</option>
-                    <option value="1">i7-8700</option>
-                    <option value="1">i7-9700K</option>
-                    <option value="1">Ryzen 3 2200G</option>
-                    <option value="1">Ryzen 5 2400G</option>
-                    <option value="1">Ryzen 5 2600G</option>
-                    <option value="1">Ryzen 7 2700G</option>
-                    <option value="1">Ryzen 3 3200G</option>
-                    <option value="1">Ryzen 5 3400G</option>
-                    <option value="1">G5400</option>
-                    <option value="1">Athlon 200GE</option>
-                    <option value="1">i3-7100</option>
-                    <option value="1">i3-7350K</option>
-                    <option value="1">i3-6100</option>
-                    <option value="1">A10 9700</option>
-                    <option value="1">A4 7300</option>
-                    <option value="1">A8 9600</option>
-                    <option value="1">i5-4440</option>
-                    <option value="1">i5-6400</option>
-                    <option value="1">i7-6700</option>
+                    <option value="">PROCESSADOR</option>
+                    <option value="">i3-8100</option>
+                    <option value="">i3-9100F</option>
+                    <option value="">i5-7400</option>
+                    <option value="">i5-8400</option>
+                    <option value="">i5-9400F</option>
+                    <option value="">i7-7700</option>
+                    <option value="">i7-7700K</option>
+                    <option value="">i7-8700</option>
+                    <option value="">i7-9700K</option>
+                    <option value="">Ryzen 3 2200G</option>
+                    <option value="">Ryzen 5 2400G</option>
+                    <option value="">Ryzen 5 2600G</option>
+                    <option value="">Ryzen 7 2700G</option>
+                    <option value="">Ryzen 3 3200G</option>
+                    <option value="">Ryzen 5 3400G</option>
+                    <option value="">G5400</option>
+                    <option value="">Athlon 200GE</option>
+                    <option value="">i3-7100</option>
+                    <option value="">i3-7350K</option>
+                    <option value="">i3-6100</option>
+                    <option value="">A10 9700</option>
+                    <option value="">A4 7300</option>
+                    <option value="">A8 9600</option>
+                    <option value="">i5-4440</option>
+                    <option value="">i5-6400</option>
+                    <option value="">i7-6700</option>
                 </select>                                               
                 <select class="memoria_opt"name="opcoes">
-                    <option value="1">MEMÓRIA</option>
-                    <option value="1">4GB</option>
-                    <option value="1">8GB</option>
-                    <option value="1">16GB</option>
-                    <option value="1">32GB</option>
+                    <option value="">MEMÓRIA</option>
+                    <option value="">4GB</option>
+                    <option value="">8GB</option>
+                    <option value="">16GB</option>
+                    <option value="">32GB</option>
                 </select>                                                                     
                 <select class="ssd_opt"name="opcoes">
-                    <option value="1">HD/SSD</option>
-                    <option value="1">500 GB</option>
-                    <option value="1">1 TB</option>
-                    <option value="1">SSD 120GB</option>
-                    <option value="1">SSD 240GB</option>
-                    <option value="1">SSD 480GB</option>
+                    <option value="">HD/SSD</option>
+                    <option value="">500 GB</option>
+                    <option value="">1 TB</option>
+                    <option value="">SSD 120GB</option>
+                    <option value="">SSD 240GB</option>
+                    <option value="">SSD 480GB</option>
                 </select>                               
                 <div class="busca">
                     <div class="busca_int">
-                        <b>BUSCAR</b>
+                        <input type="button" value="BUSCAR"/>
                     </div>
                 </div>     
-            </div>                             
+            </form>                                        
         </div>
 
         <div style="height: 1000px"></div>

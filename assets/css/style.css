@@ -339,12 +339,21 @@ form #search:focus, input:focus, select:focus {
 }
 .busca{
     width: 14%;
+    height: 60%;
     background-color: #dd1f26;
     display: flex;
     justify-content: center;
     align-items: center;    
     color: #FFF;
     border: 2px solid #e86969;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.busca input{
+    color: #FFF;
+    background-color: #dd1f26;
+    border: 0;
+    font-weight: bold;
 }
 .placa_video_opt,
 .processador_opt,
@@ -396,6 +405,7 @@ form #search:focus, input:focus, select:focus {
 .links_hide5 a{
     color: #dd1f26;
     padding: 10px;
+    display: none;
 }
 .links_show button,
 .links_show2 button,
@@ -663,19 +673,20 @@ form #search:focus, input:focus, select:focus {
     }
 
     .placa_video_opt{        
-        background-size: 35px 25px, 40px 20px;                  
+        background-size: 0px, 40px 20px;                  
     }
     .processador_opt{        
-        background-size: 35px 35px, 40px 20px;          
+        background-size: 0px, 40px 20px;          
     }
     .memoria_opt{        
-        background-size: 35px 35px, 40px 20px;                  
+        background-size: 0px, 40px 20px;                  
     }
     .ssd_opt{        
-        background-size: 35px 35px, 40px 20px;                  
+        background-size: 0px, 40px 20px;                  
     }
     .busca{
         width: 99%;
+        height: auto;
         padding-top: 7px;
         padding-bottom: 7px;
         border-radius: 5px;
@@ -765,9 +776,9 @@ form #search:focus, input:focus, select:focus {
         padding-right: 5px;
     }
 
-    #menu_open_mobile{                        
-        position: fixed;
+    #menu_open_mobile{                                
         margin-top: -50px;
+        position: absolute;
     }
 
     .linha_menu{
@@ -809,6 +820,9 @@ form #search:focus, input:focus, select:focus {
 }
 
 @media only screen and (max-width: 426px){
+    .teste{
+        width: 100%;
+    }
     .escolha_pc_int{
         display: flex;
         flex-direction: column;        
@@ -817,19 +831,20 @@ form #search:focus, input:focus, select:focus {
     }
 
     .placa_video_opt{        
-        background-size: 25px 15px, 30px 15px;                  
+        background-size: 0px, 30px 15px;                  
     }
     .processador_opt{        
-        background-size: 25px 25px, 30px 15px;          
+        background-size: 0px, 30px 15px;          
     }
     .memoria_opt{        
-        background-size: 25px 25px, 30px 15px;                  
+        background-size: 0px, 30px 15px;                  
     }
     .ssd_opt{        
-        background-size: 25px 25px, 30px 15px;                  
+        background-size: 0px, 30px 15px;                  
     }
     .busca{
         width: 99%;
+        height: auto;
         padding-top: 7px;
         padding-bottom: 7px;
         border-radius: 5px;
@@ -917,7 +932,7 @@ form #search:focus, input:focus, select:focus {
     }
 
     #menu_open_mobile{                        
-        position: fixed;
+        position: absolute;
         margin-top: -50px;
     }
 
