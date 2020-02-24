@@ -7,6 +7,7 @@
         <link type="text/css" href="assets/css/style.css" rel="stylesheet"/>        
         <script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>    
         <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/script.js"></script>
         <script>
             $(document).ready(function(){
                 $("#search").focus(function(){
@@ -18,28 +19,37 @@
                     $(this).css("border", " 2px solid #3d3d3d");
                 });               
                 
-                
+                                              
                 $('#menu_open_mobile').width(0);                                 
                 $('.teste').css("display", "none");                              
                 $('.icon_mobile').click(function () {
                     $("#menu_open_mobile").css("height", "100%");
+                    $(".teste").css("width", "100%");
                     $('#menu_open_mobile').show().animate({
                         "width": "100%",                        
                     }, 500);
                     $(".teste").fadeIn(800);
-                    $('.close').click(function () {                                        
-                        $('#menu_open_mobile').width(0);         
-                        $("#menu_open_mobile").css("height", "0");                        
-                        $('.teste').css("display", "none");
-                    });
                 });                                                
-                
+                $('.close').click(function () {                                                                                                                                          
+                    $('#menu_open_mobile').show().animate({
+                        "width": "0%",                        
+                    }, 350);
+                    $(".teste").fadeTo(800);
+                    setTimeout(function(){
+                        $('.teste').css("display", "none");                              
+                        $('#menu_open_mobile').height(0);                 
+                    }, 320);                    
+                });                                                
 
-                function open_input(){
-                    var input = document.getElementById("search");
-                    input.style.display = "block";
-                }
 
+                $(".lupa_mobile").click(function(){
+                    $(".menu_mobile_init").css("display", "none");
+                    $(".menu_search_all").css("display", "block");
+                })
+                $(".close_search").click(function(){
+                    $(".menu_mobile_init").css("display", "flex");
+                    $(".menu_search_all").css("display", "none");
+                })
 
 
                 $(".pc").mouseover(function(){                    
@@ -47,7 +57,7 @@
                     $(".pc").css("border-bottom", "2px solid #dd1f26");
                     $(".prod_item").css("display", "block");
                     $(".banner").css("margin-top", "-300px");
-                    $(".seta").css("display", "none");
+                    $(".seta").css("display", "none");                    
                     $(".change").css("margin-top", "120px");
                 });
                 $(".pc").mouseout(function(){
@@ -55,8 +65,8 @@
                     $(".pc").css("border-bottom", "0px");
                     $(".prod_item").css("display", "none");
                     $(".banner").css("margin-top", "-100px");
-                    $(".seta").css("display", "flex");
-                    $(".change").css("margin-top", "320px");
+                    $(".seta").css("display", "flex");                  
+                    $(".change").css("margin-top", "0px");                
                 });
 
                 $(".acessorios").mouseover(function(){                    
@@ -72,8 +82,8 @@
                     $(".acessorios").css("border-bottom", "0px");
                     $(".prod_item").css("display", "none");
                     $(".banner").css("margin-top", "-100px");
-                    $(".seta").css("display", "flex");
-                    $(".change").css("margin-top", "320px");
+                    $(".seta").css("display", "flex");                  
+                    $(".change").css("margin-top", "0px");                
                 });
 
                 $(".hardware").mouseover(function(){                    
@@ -89,8 +99,8 @@
                     $(".hardware").css("border-bottom", "0px");
                     $(".prod_item").css("display", "none");
                     $(".banner").css("margin-top", "-100px");
-                    $(".seta").css("display", "flex");
-                    $(".change").css("margin-top", "320px");
+                    $(".seta").css("display", "flex");                  
+                    $(".change").css("margin-top", "0px");                
                 });
 
                 $(".perif").mouseover(function(){                    
@@ -106,8 +116,8 @@
                     $(".perif").css("border-bottom", "0px");
                     $(".prod_item").css("display", "none");
                     $(".banner").css("margin-top", "-100px");
-                    $(".seta").css("display", "flex");
-                    $(".change").css("margin-top", "320px");
+                    $(".seta").css("display", "flex");                  
+                    $(".change").css("margin-top", "0px");                
                 });
 
                 $(".escritorio").mouseover(function(){                    
@@ -123,36 +133,63 @@
                     $(".escritorio").css("border-bottom", "0px");
                     $(".prod_item").css("display", "none");
                     $(".banner").css("margin-top", "-100px");
-                    $(".seta").css("display", "flex");
-                    $(".change").css("margin-top", "320px");
+                    $(".seta").css("display", "flex");                    
+                    $(".change").css("margin-top", "0px");              
                 });
 
                 $(".shop").mouseover(function(){                    
                     $(".prod").css("padding-top", "22px");
-                    $(".shop").css("border-bottom", "2px solid #dd1f26");
-                    $(".prod_item").css("display", "block");
-                    $(".banner").css("margin-top", "-300px");
-                    $(".seta").css("display", "none");
-                    $(".change").css("margin-top", "120px");
+                    $(".shop").css("border-bottom", "2px solid #dd1f26");                    
                 });
                 $(".shop").mouseout(function(){
                     $(".prod").css("padding-top", "20px");
-                    $(".shop").css("border-bottom", "0px");
-                    $(".prod_item").css("display", "none");
-                    $(".banner").css("margin-top", "-100px");
-                    $(".seta").css("display", "flex");
-                    $(".change").css("margin-top", "320px");
+                    $(".shop").css("border-bottom", "0px");                              
                 });            
 
+                $(".seta_right").click(function(){
+                    showSlides(0);
+                });
+                $(".seta_left").click(function(){
+                    slideIndex = slideIndex - 2;
+                    if(slideIndex < 0){
+                        slideIndex = 5;
+                    }
+                    showSlides(0);
+                });
+                $(".first").click(function(){
+                    slideIndex = 0;
+                    showSlides();
+                })
+                $(".second").click(function(){
+                    slideIndex = 1;
+                    showSlides();
+                })
+                $(".third").click(function(){
+                    slideIndex = 2;
+                    showSlides();
+                })
+                $(".fourth").click(function(){
+                    slideIndex = 3;
+                    showSlides();
+                })
+                $(".fifth").click(function(){
+                    slideIndex = 4;
+                    showSlides();
+                })
+                $(".sixth").click(function(){
+                    slideIndex = 5;
+                    showSlides();
+                })
+
                 var slideIndex = 0;
-                var x = 0;
+                var inicio_slide = 0;
                 showSlides(x);
+                inicio_slide = setInterval(showSlides, 15000);      
+                var x = 0;
                 function showSlides(x) {                                                                    
                     var i;
                     var slides = document.getElementsByClassName("banner");
-                    var button = document.getElementsByClassName("change_button");
-
-                    console.log(x);
+                    var button = document.getElementsByClassName("change_button");                
 
                     for(i = 0; i < slides.length; i++) {                        
                         slides[i].style.display = "none";  
@@ -167,10 +204,88 @@
                         button[i].className = button[i].className.replace("button_on", "");
                     }
                     
-                    slides[slideIndex-1].style.display = "block"; 
-                    button[slideIndex-1].className += " button_on";                    
-                    setTimeout(showSlides, 15000);                                         
-                }                
+                    if(x == undefined){
+                        x = 0;
+                    }                               
+                    var num_slide = (slideIndex - 1) - x;
+                    console.log(slideIndex);
+                    console.log("x"+ x);
+                    console.log("slide"+num_slide);
+                    console.log("slide sem x"+(slideIndex - 1));
+                    slides[num_slide].style.display = "block";                     
+                    button[slideIndex-1].className += " button_on";                                                                           
+                }                                
+
+                $(".button_down").click(function(){                
+                    $(this).css("display", "none");
+                    $(".button_up").css("display", "flex");
+                    $(".links_show").animate({
+                        height: "608px",
+                    });                                      
+                });                
+                $(".button_up").click(function(){                
+                    $(this).css("display", "none");
+                    $(".button_down").css("display", "flex");
+                    $(".links_show").animate({
+                        height: "30px",
+                    });                                      
+                });
+                $(".button_down2").click(function(){                
+                    $(this).css("display", "none");
+                    $(".button_up2").css("display", "flex");
+                    $(".links_show2").animate({
+                        height: "476px",
+                    });                                      
+                });                
+                $(".button_up2").click(function(){                
+                    $(this).css("display", "none");
+                    $(".button_down2").css("display", "flex");
+                    $(".links_show2").animate({
+                        height: "30px",
+                    });                                      
+                });                
+                $(".button_down3").click(function(){                
+                    $(this).css("display", "none");
+                    $(".button_up3").css("display", "flex");
+                    $(".links_show3").animate({
+                        height: "520px",
+                    });                                      
+                });                
+                $(".button_up3").click(function(){                
+                    $(this).css("display", "none");
+                    $(".button_down3").css("display", "flex");
+                    $(".links_show3").animate({
+                        height: "30px",
+                    });                                      
+                });                
+                $(".button_down4").click(function(){                
+                    $(this).css("display", "none");
+                    $(".button_up4").css("display", "flex");
+                    $(".links_show4").animate({
+                        height: "256px",
+                    });                                      
+                });                
+                $(".button_up4").click(function(){                
+                    $(this).css("display", "none");
+                    $(".button_down4").css("display", "flex");
+                    $(".links_show4").animate({
+                        height: "30px",
+                    });                                      
+                });                
+                $(".button_down5").click(function(){                
+                    $(this).css("display", "none");
+                    $(".button_up5").css("display", "flex");
+                    $(".links_show5").animate({
+                        height: "212px",
+                    });                                      
+                });                
+                $(".button_up5").click(function(){                
+                    $(this).css("display", "none");
+                    $(".button_down5").css("display", "flex");
+                    $(".links_show5").animate({
+                        height: "30px",
+                    });                                      
+                });                                
             });
             </script>            
     </head>
@@ -210,7 +325,7 @@
                         <form action="" method="POST">
                             <input id="search" type="text" placeholder="O que você procura..." name="texto"/>
                             <input type="image" alt="submit form" class="lupa_desktop" src="assets/images/lupa.png"/>
-                            <input onclick="open_input()" type="image" alt="submit form" class="lupa_mobile" src="assets/images/lupa.png"/>
+                            <img class="lupa_mobile" src="assets/images/lupa.png" onclick="open_search()"/>
                         </form>                        
                         <div class="nav_contato">
                             <img src="assets/images/contato.png"/>
@@ -224,7 +339,16 @@
         
 
             <div class="container-fluid text-white" id="menu_mobile">
-                <div class="row">
+                <div class="row menu_search_all">
+                    <div class="menu_search">                        
+                        <form method="POST" class="menu_search_int" style="margin-left: 0px;">
+                            <div class="close_left"><img class="close_search" src="assets/images/x.png"/></div>                        
+                            <input autofocus class="input_mobile" type="text" placeholder="O que você procura..."/>
+                            <div class="search_right"><input type="image" alt="submit form" class="lupa_desktop" src="assets/images/lupa.png"/></div>
+                        </form>                        
+                    </div>
+                </div>
+                <div class="row menu_mobile_init">                    
                     <div class="col-1 col-sm-2" id="left_side_mobile">
                         <div class="icon_mobile">
                             <div class="icon_parts"></div>
@@ -237,13 +361,13 @@
                             <img class="" src="assets/images/logo_shopinfo.png"/>
                         </div>
                     </div>
-                    <div class="col-1 col-sm-2" id="right_side_mobile">                        
-                        <img class="img_lupa_img" src="assets/images/lupa.png">                        
+                    <div class="col-1 col-sm-2" id="right_side_mobile">                                                
+                        <img class="lupa_mobile" src="assets/images/lupa.png"/>
                     </div>                    
                 </div>
             </div>
         </header>                
-        <div class="container-fluid" id="menu_open_mobile">
+        <div class="container-fluid" id="menu_open_mobile" style="display: none">            
             <div class="row teste" style="margin-top: -10px;">
                 <div class="col-11 linha_menu" style="padding-bottom: 10px; padding-top: 10px">                    
                     <div class="row" id="menu_open_first">
@@ -253,7 +377,7 @@
                         <div class="col-10 menu_second_img">                            
                             <div class="col-10 menu_open_login">
                                 <span style="font-size:18px;">Minha Conta</span> <br/> <a href="">faça login</a>
-                                 ou <a href="">registre-se</a>&nbsp; |&nbsp;
+                                ou <a href="">registre-se</a>&nbsp; |&nbsp;
                                 <a href="">atendimento</a>
                             </div>
                         </div>
@@ -263,50 +387,112 @@
                     </div>                                        
                 </div>
                 <div class="col-11 col-sm-11 linha_menu" style="border-top: 1px solid #FFF;">
-                    <div class="row" style="width: 92%; padding:20px;padding-left: 25px;">
-                        <div class="col-10 col-sm-10">PC Gamer</div>
-                        <div class="col-2 col-sm-2" style="text-align: end">p</div>                        
+                    <div class="row links_show" style="width: 96%;height: 30px;; padding:20px;padding-left: 25px;">
+                        <button class="button_down" style="width: 100%; max-height: 25px;">PC Gamer <img style="width:21px;margin-top: 7px;" src="assets/images/seta_down2.png"></button>   
+                        <button class="button_up" style="display: none; width: 100%; max-height: 25px;">PC Gamer <img style="width:21px;margin-top: 7px;" src="assets/images/seta_down2.png"></button>                        
+                        <div class="links_hide">
+                            <a href="">Start</a>
+                            <a href="">Battle Box</a>
+                            <a href="">Battle Machine</a>
+                            <a href="">CS Box</a>
+                            <a href="">Moba Box</a>
+                            <a href="">Exclusivos Neologic</a>
+                            <a href="">Mine Box</a>
+                            <a href="">Setup Gamer</a>
+                            <a href="">Vai jogar o que</a>
+                            <a href="">Kit Gamer</a>
+                            <a href="">AMD Gamer</a>
+                            <a href="">E-Sports Box</a>                            
+                        </div>                        
                     </div>                                        
                 </div>                
                 <div class="col-11 col-sm-11 linha_menu" style="border-top: 1px solid rgba(61, 61, 61, 0.5)">
-                    <div class="row" style="width: 92%; padding:20px;padding-left: 25px;">
-                        <div class="col-10 col-sm-10">Acessórios</div>
-                        <div class="col-2 col-sm-2" style="text-align: end">p</div>
+                    <div class="row links_show2" style="width: 96%;height: 30px;; padding:20px;padding-left: 25px;">
+                        <button class="button_down2" style="width: 100%; max-height: 25px;">Acessórios<img style="width:21px;margin-top: 7px;" src="assets/images/seta_down2.png"></button>   
+                        <button class="button_up2" style="display: none; width: 100%; max-height: 25px;">Acessórios<img style="width:21px;margin-top: 7px;" src="assets/images/seta_down2.png"></button>                        
+                        <div class="links_hide2">
+                            <a href="">Headset Gamer</a>
+                            <a href="">Mouse Gamer</a>
+                            <a href="">Cadeira Gamer</a>
+                            <a href="">Mousepad Gamer</a>
+                            <a href="">Teclado Gamer</a>
+                            <a href="">Kit Gamer</a>
+                            <a href="">Monitor Gamer</a>
+                            <a href="">Joystick</a>
+                            <a href="">Adaptadores</a>                            
+                        </div>                        
                     </div>
                 </div>
                 <div class="col-11 col-sm-11 linha_menu" style="border-top: 1px solid rgba(61, 61, 61, 0.5)">
-                    <div class="row" style="width: 92%; padding:20px;padding-left: 25px;">
-                        <div class="col-10 col-sm-10">Hardware</div>
-                        <div class="col-2 col-sm-2" style="text-align: end">p</div>
+                    <div class="row links_show3" style="width: 96%;height: 30px;; padding:20px;padding-left: 25px;">
+                        <button class="button_down3" style="width: 100%; max-height: 25px;">Hardware<img style="width:21px;margin-top: 7px;" src="assets/images/seta_down2.png"></button>   
+                        <button class="button_up3" style="display: none; width: 100%; max-height: 25px;">Hardware<img style="width:21px;margin-top: 7px;" src="assets/images/seta_down2.png"></button>                        
+                        <div class="links_hide3">
+                            <a href="">Cooler</a>
+                            <a href="">Fonte</a>
+                            <a href="">Gabinete</a>
+                            <a href="">HD/SSD</a>
+                            <a href="">Kit Upgrade</a>
+                            <a href="">Memória</a>
+                            <a href="">Placa de rede</a>
+                            <a href="">Placa de vídeo</a>
+                            <a href="">Placa mãe</a>
+                            <a href="">Processador</a>                            
+                        </div>                        
                     </div>
                 </div>                
                 <div class="col-11 col-sm-11 linha_menu" style="border-top: 1px solid rgba(61, 61, 61, 0.5)">
-                    <div class="row" style="width: 92%; padding:20px;padding-left: 25px;">
-                        <div class="col-10 col-sm-10">Periféricos</div>
-                        <div class="col-2 col-sm-2" style="text-align: end">p</div>
+                    <div class="row links_show4" style="width: 96%;height: 30px;; padding:20px;padding-left: 25px;">
+                        <button class="button_down4" style="width: 100%; max-height: 25px;">Periféricos<img style="width:21px;margin-top: 7px;" src="assets/images/seta_down2.png"></button>   
+                        <button class="button_up4" style="display: none; width: 100%; max-height: 25px;">Periféricos<img style="width:21px;margin-top: 7px;" src="assets/images/seta_down2.png"></button>                        
+                        <div class="links_hide4">
+                            <a href="">Impressora e Scanner</a>
+                            <a href="">Projetor Multimídia</a>
+                            <a href="">Monitor</a>
+                            <a href="">Roteador</a>                            
+                        </div>                        
                     </div>
                 </div>
                 <div class="col-11 col-sm-11 linha_menu" style="border-top: 1px solid rgba(61, 61, 61, 0.5)">
-                    <div class="row" style="width: 92%; padding:20px;padding-left: 25px;">
-                        <div class="col-10 col-sm-10">Escritório</div>
-                        <div class="col-2 col-sm-2" style="text-align: end">p</div>
+                    <div class="row links_show5" style="width: 96%;height: 30px;; padding:20px;padding-left: 25px;">
+                        <button class="button_down5" style="width: 100%; max-height: 25px;">Escritório<img style="width:21px;margin-top: 7px;" src="assets/images/seta_down2.png"></button>   
+                        <button class="button_up5" style="display: none; width: 100%; max-height: 25px;">Escritório<img style="width:21px;margin-top: 7px;" src="assets/images/seta_down2.png"></button>                        
+                        <div class="links_hide5">
+                            <a href="">Acessórios</a>
+                            <a href="">Home</a>
+                            <a href="">Workstation</a>                                             
+                        </div>                        
                     </div>
                 </div>
                 <div class="col-11 col-sm-11 linha_menu" style="border-top: 1px solid rgba(61, 61, 61, 0.5);
                 border-bottom: 1px solid rgba(61, 61, 61, 0.5);">
                     <div class="row" style="width: 92%; padding:20px;padding-left: 25px;">
-                        <div class="col-10 col-sm-10">ShopOfertas</div>                        
+                        <div class="col-10 col-sm-10" style="margin-left: 7px;"><b>ShopOfertas</b></div>                        
                     </div>
                 </div>
                 <div class="col-11 col-sm-11 linha_menu" style="border-top: 1px solid rgba(61, 61, 61, 0.5);">
                     <div class="row" style="width: 92%; padding:20px;padding-left: 25px; margin-bottom: 50px;">                                                
                     </div>
-                </div>
-                
+                </div>                                
             </div>
         </div>
 
         <div class="prod_item">
+            <div class="link_pc">
+                <div class="link_pc_int">
+                    <div class="pc_link"><a>Start</a></div>
+                    <div class="pc_link"><a>Battle Box</a></div>
+                    <div class="pc_link"><a>CS Box</a></div>
+                    <div class="pc_link"><a>Moba Box</a></div>
+                    <div class="pc_link"><a>Exclusivos<br/> Neologic</a></div>
+                    <div class="pc_link"><a>Mine Box</a></div>
+                    <div class="pc_link"><a>Setup<br/> Gamer</a></div>
+                    <div class="pc_link"><a>E ai?<br/> Vai jogar<br/> o que?</a></div>
+                    <div class="pc_link"><a>Kit Gamer</a></div>
+                    <div class="pc_link"><a>AMD Gamer</a></div>
+                    <div class="pc_link"><a>E-Sports Box</a></div>
+                </div>
+            </div>
         </div>
         
         <div class="banner">
@@ -331,31 +517,110 @@
 
         <div class="banner">            
             <img src="assets/images/image6.jpg" style="width: 100%">
-        </div>          
-
-        <div class="change">
-            <div class="change_int">
-                <a href=""><div class="change_button first"></div></a>
-                <a href=""><div class="change_button second"></div></a>
-                <a href=""><div class="change_button third"></div></a>
-                <a href=""><div class="change_button fourth"></div></a>
-                <a href=""><div class="change_button fifth"></div></a>
-                <a href=""><div class="change_button sixth"></div></a>
-            </div>
-        </div>
-
+        </div>        
+        
         <div class="seta">
             <div class="seta_int">
-                <div class="seta_left">
-                    <a href="">
-                        <img src="assets/images/seta_left.png" onclick="showSlides(1)"/>
-                    </a>
+                <div class="seta_left">                    
+                    <img src="assets/images/seta_left.png"/>                    
                 </div>
                 <div class="seta_right">
-                    <a href=""><img src="assets/images/seta_right.png"/></a>
+                    <img src="assets/images/seta_right.png"/>
                 </div>                
             </div>
         </div>        
+
+        <div class="change">
+            <div class="change_int">
+                <div class="change_button first"></div>
+                <div class="change_button second"></div>
+                <div class="change_button third"></div>
+                <div class="change_button fourth"></div>
+                <div class="change_button fifth"></div>
+                <div class="change_button sixth"></div>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: center; margin-bottom: 15px">
+            <div style="display: flex; justify-content: center;">
+                <h2 class="text-white encontre_pc" style="width: 100%;font-weight:bold">
+                    Econtre seu PC Gamer ideal</h2>
+            </div>  
+        </div>
+
+        <div class="escolha_pc">                            
+            <div class="escolha_pc_int">                
+                <select class="placa_video_opt"name="opcoes">
+                    <option value="">PLACA DE VÍDEO</option>
+                    <option value="">GeForce GT 1030 2GB</option>
+                    <option value="">GeForce GTX 1050 2GB</option>
+                    <option value="">GeForce GTX 1050TI 4GB</option>
+                    <option value="">GeForce GTX 1650</option>
+                    <option value="">GeForce GTX 1050 3GB</option>
+                    <option value="">GeForce GTX 1050 6GB</option>
+                    <option value="">GeForce GTX 1660</option>
+                    <option value="">GeForce GTX 1660 TI</option>
+                    <option value="">GeForce RTX 2060 6GB</option>
+                    <option value="">GeForce RTX 2060 Super 8GB</option>
+                    <option value="">GeForce RTX 2070 8GB</option>
+                    <option value="">GeForce RTX 2070 Super 8GB</option>
+                    <option value="">GeForce RTX 2080 8GB</option>
+                    <option value="">GeForce RTX 2080 Super 8GB</option>
+                    <option value="">Amd Radeon RX 560 4GB</option>
+                    <option value="">Amd Radeon RX 570 4GB</option>
+                    <option value="">Amd Radeon RX 580 8GB</option>
+                </select>                                               
+                <select class="processador_opt"name="opcoes">
+                    <option value="1">PROCESSADOR</option>
+                    <option value="1">i3-8100</option>
+                    <option value="1">i3-9100F</option>
+                    <option value="1">i5-7400</option>
+                    <option value="1">i5-8400</option>
+                    <option value="1">i5-9400F</option>
+                    <option value="1">i7-7700</option>
+                    <option value="1">i7-7700K</option>
+                    <option value="1">i7-8700</option>
+                    <option value="1">i7-9700K</option>
+                    <option value="1">Ryzen 3 2200G</option>
+                    <option value="1">Ryzen 5 2400G</option>
+                    <option value="1">Ryzen 5 2600G</option>
+                    <option value="1">Ryzen 7 2700G</option>
+                    <option value="1">Ryzen 3 3200G</option>
+                    <option value="1">Ryzen 5 3400G</option>
+                    <option value="1">G5400</option>
+                    <option value="1">Athlon 200GE</option>
+                    <option value="1">i3-7100</option>
+                    <option value="1">i3-7350K</option>
+                    <option value="1">i3-6100</option>
+                    <option value="1">A10 9700</option>
+                    <option value="1">A4 7300</option>
+                    <option value="1">A8 9600</option>
+                    <option value="1">i5-4440</option>
+                    <option value="1">i5-6400</option>
+                    <option value="1">i7-6700</option>
+                </select>                                               
+                <select class="memoria_opt"name="opcoes">
+                    <option value="1">MEMÓRIA</option>
+                    <option value="1">4GB</option>
+                    <option value="1">8GB</option>
+                    <option value="1">16GB</option>
+                    <option value="1">32GB</option>
+                </select>                                                                     
+                <select class="ssd_opt"name="opcoes">
+                    <option value="1">HD/SSD</option>
+                    <option value="1">500 GB</option>
+                    <option value="1">1 TB</option>
+                    <option value="1">SSD 120GB</option>
+                    <option value="1">SSD 240GB</option>
+                    <option value="1">SSD 480GB</option>
+                </select>                               
+                <div class="busca">
+                    <div class="busca_int">
+                        <b>BUSCAR</b>
+                    </div>
+                </div>     
+            </div>                             
+        </div>
 
         <div style="height: 1000px"></div>
     </body>

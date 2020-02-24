@@ -63,8 +63,7 @@ body{
 }
 
 
-.change{
-    margin-top: 320px;
+.change{    
     display: flex;
     justify-content: center;
 }
@@ -75,10 +74,12 @@ body{
     width: 30%;
     height: 90px;    
 }
-.change_int a{
+.change_int a,
+.change_button{
     width: 10%;
     height: 2px;
     background-color: #414141;
+    cursor: pointer;
 }
 
 .button_on{    
@@ -86,9 +87,29 @@ body{
     background-color: #dd1f26;
 }
 
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
 
-.seta{
-    margin-top: -410px;
+.fade:not(.show){
+    opacity: 5;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+
+.seta{    
     height: 320px;    
     display: flex;
     justify-content: center;
@@ -103,6 +124,7 @@ body{
 .seta_right img{
     width: 15px;
     height: 28px;
+    cursor: pointer;
 }
 
 
@@ -196,6 +218,41 @@ form #search{
 form #search:focus, input:focus, select:focus {
     outline: 0;
 }
+.input_mobile{    
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 80%;
+    background-color: #000;
+    border: 2px solid #000;
+    border-radius: 5px;
+    color: #FFF;
+}
+
+
+.close_search{
+    width: 18px;
+    height: 18px;
+}
+.menu_search_all{
+    display: none;
+}
+.menu_search{
+    display: flex;
+    width: 100%;
+}
+.menu_search_int{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.close_left,
+.search_right{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .lupa_desktop{
     width: 18px;
@@ -229,15 +286,151 @@ form #search:focus, input:focus, select:focus {
 
 
 .prod_item{
+    font-size: 12px;
     margin-top: -20px;
     width: 100%;
     height: 220px;
     background-color: #111;
     display: none;
 }
+.link_pc{
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    height: 100%;
+}
+.link_pc_int{    
+    width: 100%;
+    max-width: 1225px;    
+    height: 54%;
+    display: none;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.pc_link{
+    border-radius: 3px;
+    width: 8%;
+    height: 90px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.placa_video_opt{
+    background: url("../images/placa_video_logo.png"),url("../images/seta_down2.png");          
+    background-size: 30px 16px, 20px 13px;  
+    width: 19%;
+}
+.processador_opt{
+    background: url("../images/processador_logo.png"), url("../images/seta_down2.png");
+    background-size: 20px 20px, 20px 13px;  
+    width: 17%;
+}
+.memoria_opt{
+    background: url("../images/memoria_logo.png"), url("../images/seta_down2.png");
+    background-size: 20px 20px, 20px 13px;  
+    width: 14%;
+}
+.ssd_opt{
+    background: url("../images/ssd_logo.png"), url("../images/seta_down2.png");
+    background-size: 18px 22px, 20px 13px;  
+    width: 14%;
+}
+.busca{
+    width: 14%;
+    background-color: #dd1f26;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    color: #FFF;
+    border: 2px solid #e86969;
+}
+.placa_video_opt,
+.processador_opt,
+.memoria_opt,
+.ssd_opt{            
+    background-repeat: no-repeat;               
+    background-color: #272727; 
+    border: 2px solid #3a3838;
+    background-position-y: center, 17px;
+    background-position-x: 9px, 92%;
+    text-indent: 5px;
+    text-align-last: right;           
+    font-size:12px;
+    padding: 13px;               
+    color:#ccc;      
+    -webkit-appearance: none;
+    -moz-appearance: none;        
+    font-size: 13px;
+    text-align-last: center;    
+}
 
-@media only screen and (min-width: 1000px) and (max-width: 1225px){    
+.escolha_pc{
+    display: flex;
+    justify-content: center;
+}
+.escolha_pc_int{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.col-1, .col-2, .col-6, .col-10, .col-11, .col-sm-1, .col-sm-2, .col-sm-6, .col-sm-8, .col-sm-10, .col-md-1, .col-md-2{
+    padding: 0;
+}        
+
+.links_hide,
+.links_hide2,
+.links_hide3,
+.links_hide4,
+.links_hide5{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;    
+}
+.links_hide a,
+.links_hide2 a,
+.links_hide3 a,
+.links_hide4 a,
+.links_hide5 a{
+    color: #dd1f26;
+    padding: 10px;
+}
+.links_show button,
+.links_show2 button,
+.links_show3 button,
+.links_show4 button,
+.links_show5 button{
+    display: flex;
+    justify-content: space-between;
+    color: #FFF;
+    background-color: rgb(26, 26, 26);
+    border: 0;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1225px){        
+    .placa_video_opt{        
+        background-size: 25px 12px, 15px 10px;          
+    }
+    .processador_opt{        
+        background-size: 15px 15px, 15px 10px;          
+    }
+    .memoria_opt{        
+        background-size: 15px 15px, 15px 10px;          
+    }
+    .ssd_opt{        
+        background-size: 15px 17px, 15px 10px;          
+    }
+
+    .placa_video_opt,
+    .processador_opt,
+    .memoria_opt,
+    .ssd_opt{
+        font-size: 10px;
+    }
+
     .promo_int{
         width: 734px;
     }
@@ -319,12 +512,72 @@ form #search:focus, input:focus, select:focus {
     }
 
 
-
     .seta_int{
         width: 1000px;
     }
 }
-@media only screen and (min-width: 769px) and (max-width: 1000px){    
+@media only screen and (min-width: 769px) and (max-width: 1000px){        
+    .link_pc{
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+        height: 100%;
+    }
+    .link_pc_int{    
+        width: 100%;
+        max-width: 1225px;
+        background-color:#fff;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .pc_link{
+        width: 8%;
+        height: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lupa_desktop{
+        display: none;
+    }
+    .lupa_mobile{
+        display: block;
+        width: 18px;
+        height: 18px;
+    }
+
+
+    .placa_video_opt{        
+        background-size: 20px 10px, 10px 5px;          
+        width: 18%;
+    }
+    .processador_opt{        
+        background-size: 10px 10px, 10px 5px;  
+        width: 16%;        
+    }
+    .memoria_opt{        
+        background-size: 10px 10px, 10px 5px;          
+        width: 12%;
+    }
+    .ssd_opt{        
+        background-size: 10px 15px, 10px 5px;          
+        width: 12%;
+    }
+    .busca{
+        width: 12%;
+        font-size: 13px;
+    }
+
+    .placa_video_opt,
+    .processador_opt,
+    .memoria_opt,
+    .ssd_opt{
+        font-size: 9px;
+    }
+
     .promo_int{
         width: 564px;
     }
@@ -398,85 +651,47 @@ form #search:focus, input:focus, select:focus {
 
 }
 
-@media only screen and (min-width: 755px) and (max-width: 769px){        
-    .promo_int{
-        width: 564px;
+@media only screen and (min-width: 426px) and (max-width: 769px){        
+    .prod_item{
+        display: none;
     }
-    .header_int{
-        max-width: 760px;
-    }
-    .logo{
-        width: 160px;
-        height: 33.6px;
+    .escolha_pc_int{
+        display: flex;
+        flex-direction: column;        
+        width: 90%;
+        height: 330px;
     }
 
-    .text_promo_top{
-        font-size: 10px;
+    .placa_video_opt{        
+        background-size: 35px 25px, 40px 20px;                  
     }
-    .val_promo{
-        font-size: 15px;
+    .processador_opt{        
+        background-size: 35px 35px, 40px 20px;          
     }
-    .promo_int img{
-        width: 41.6px;
-        height: 40px;                
+    .memoria_opt{        
+        background-size: 35px 35px, 40px 20px;                  
     }
-    
+    .ssd_opt{        
+        background-size: 35px 35px, 40px 20px;                  
+    }
+    .busca{
+        width: 99%;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        border-radius: 5px;
+        font-size: 20px;
+    }
 
-    
-    nav{
-        width: 75%;
+    .placa_video_opt,
+    .processador_opt,
+    .memoria_opt,
+    .ssd_opt{
+        font-size: 17px;
+        width: 95%;
+        border-radius: 5px;
+        background-position-x: 40px, 92%;
     }
-    form #search{
-        display: none;        
-    }
-    form{
-        width: 18px;
-    }
-    .nav_prod{
-        width: 82%;
-    }
-    .nav_link_right{
-        width: 18%;
-    }
-    .nav_prod_int{
-        font-size: 12px;
-    }
-    .nav_contato img{
-        margin: 0;
-    }
-    .seta_int{
-        width: 760px;
-    }
-    
-    .nav_contato,
-    .nav_contato img{
-        width: 23px;
-        margin: 0;
-        padding: 0;
-        height: 23px;
-    }    
-    .nav_carrinho{
-        width: 37px;
-        height: 25px;
-    }
-    .nav_carrinho img{
-        border: 1px solid #dd1f26;
-        width: 15px;
-        height: 15px;
-        padding-top: 3px;
-        padding-bottom: 5px;
-        padding-left: 10px;
-        padding-right: 10px;        
-        border-radius: 2px;
-    }    
-    .lupa_desktop{
-        width: 18px;
-        height: 18px;    
-    }
-    
-}
 
-@media only screen and (max-width: 755px){
     header{
         background-color: #000;
         height: 50px;
@@ -520,14 +735,14 @@ form #search:focus, input:focus, select:focus {
         justify-content: flex-end;
         align-items: center;      
     }    
-    .img_lupa_img{
+    .lupa_mobile,
+    .lupa_desktop{
         width: 30px;
         height: 30px;
         padding-right: 10px;        
-    }
-
-    .col-1, .col-2, .col-6, .col-10, .col-11, .col-sm-1, .col-sm-2, .col-sm-6, .col-sm-8, .col-sm-11{
-        padding: 0;
+    }        
+    .lupa_mobile{
+        display: block;
     }
 
     .banner{
@@ -538,15 +753,14 @@ form #search:focus, input:focus, select:focus {
         height: 200px;
     }
 
+    .change{
+        margin-top: 0;
+    }
     .change_int{
         width: 50%;
-    }
-    .change{        
-        margin-top: 200px;
-    }
+    }    
     .seta{                
-        height: 200px;
-        margin-top: -290px;
+        height: 200px;        
         padding-left: 5px;
         padding-right: 5px;
     }
@@ -586,6 +800,161 @@ form #search:focus, input:focus, select:focus {
     .menu_third_img{
         display: flex;
         justify-content: flex-start;
+    }
+
+    .encontre_pc{
+        font-size: 20px;
+    }
+    
+}
+
+@media only screen and (max-width: 426px){
+    .escolha_pc_int{
+        display: flex;
+        flex-direction: column;        
+        width: 90%;
+        height: 300px;
+    }
+
+    .placa_video_opt{        
+        background-size: 25px 15px, 30px 15px;                  
+    }
+    .processador_opt{        
+        background-size: 25px 25px, 30px 15px;          
+    }
+    .memoria_opt{        
+        background-size: 25px 25px, 30px 15px;                  
+    }
+    .ssd_opt{        
+        background-size: 25px 25px, 30px 15px;                  
+    }
+    .busca{
+        width: 99%;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        border-radius: 5px;
+        font-size: 17px;
+    }
+
+    .placa_video_opt,
+    .processador_opt,
+    .memoria_opt,
+    .ssd_opt{
+        font-size: 12px;
+        width: 92%;
+        border-radius: 5px;
+        background-position-x: 30px, 92%;
+    }
+
+    header{
+        background-color: #000;
+        height: 50px;
+    }
+    .promo{
+        display: none;
+    }
+    .header_int{
+        display: none;
+    }
+    #menu_mobile{
+        display: block;
+    }
+
+    #left_side_mobile{
+        display: flex;
+        align-items: center;
+    }
+    .icon_mobile{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 30px;
+    }
+    .icon_parts{
+        background-color: #FFF;
+        width: 30px;
+        height: 3px;
+        margin-left: 10px;
+    }
+
+    .logo_mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #right_side_mobile{
+        display: flex;  
+        justify-content: flex-end;
+        align-items: center;      
+    }    
+    .lupa_mobile{
+        width: 30px;
+        height: 30px;
+        padding-right: 10px;        
+        display: block;
+    }            
+
+    .banner{
+        margin-top: 0px;        
+    }
+    .banner img,
+    .banner{
+        height: 200px;
+    }
+
+    .change{
+        margin-top: 0;
+    }
+    .change_int{
+        width: 50%;
+    }    
+    .seta{                
+        height: 200px;        
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #menu_open_mobile{                        
+        position: fixed;
+        margin-top: -50px;
+    }
+
+    .linha_menu{
+        background-color: rgb(26, 26, 26);
+        color: #FFF;
+    }
+
+    .menu_open_login{
+        font-size: 12px;
+    }
+    .menu_open_login a{
+        color: #dd1f26;
+        text-decoration: underline;
+    }
+
+    #menu_open_first{
+        margin: 0;        
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;        
+    }
+    .menu_second_img{
+        display: flex;
+        flex-direction: column;
+        align-items: center;        
+    }
+    hr{
+        border-top: 1px solid #FFF;
+    }
+    .menu_third_img{
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .encontre_pc{
+        font-size: 20px;
     }
 }
 
