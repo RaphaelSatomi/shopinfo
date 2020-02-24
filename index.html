@@ -342,7 +342,7 @@
                         </div>
                     </div>
                     <div class="nav_link_right">                        
-                        <form action="" method="POST">
+                        <form action="" method="POST" onsubmit="return false">
                             <input id="search" type="text" placeholder="O que você procura..." name="texto"/>
                             <input type="image" alt="submit form" class="lupa_desktop" src="assets/images/lupa.png"/>
                             <img class="lupa_mobile" src="assets/images/lupa.png" onclick="open_search()"/>
@@ -361,7 +361,7 @@
             <div class="container-fluid text-white" id="menu_mobile">
                 <div class="row menu_search_all">
                     <div class="menu_search">                        
-                        <form method="POST" class="menu_search_int" style="margin-left: 0px;">
+                        <form method="POST" onsubmit="return false" class="menu_search_int" style="margin-left: 0px;">
                             <div class="close_left"><img class="close_search" src="assets/images/x.png"/></div>                        
                             <input autofocus class="input_mobile" type="text" placeholder="O que você procura..."/>
                             <div class="search_right"><input type="image" alt="submit form" class="lupa_desktop" src="assets/images/lupa.png"/></div>
@@ -569,7 +569,7 @@
         </div>
 
         <div class="escolha_pc">                                        
-            <form method="POST" class="escolha_pc_int" style="margin: 0">
+            <form method="POST" onsubmit="return false" class="escolha_pc_int" style="margin: 0">
                 <select class="placa_video_opt"name="opcoes">
                     <option value="">PLACA DE VÍDEO</option>
                     <option value="">GeForce GT 1030 2GB</option>
