@@ -3,7 +3,7 @@
 [Link website](https://shopinfo-copy.000webhostapp.com/)
 
 - Training HTML, CSS and testing Jquery and bootstrap - Shopinfo Copy
-- This website is responsive up to 768px
+- This website is responsive 
 ```diff
 - The images used are just temporary>
 ```
